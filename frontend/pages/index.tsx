@@ -8,6 +8,11 @@ import WalletConnector from '../components/walletConnector/WalletConnector';
 import * as sigUtil from 'eth-sig-util';
 import { signReport } from '../crypto';
 import { useWeb3React } from '@web3-react/core';
+import Button from '@mui/material/Button';
+import Headline from '../components/headline/Headline';
+import Form from '../components/form/Form';
+import Box from '@mui/material/Box';
+import { Stack } from '@mui/material';
 
 interface Message {
   timestamp: Date;
@@ -114,22 +119,33 @@ const Home: NextPage = () => {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <p>{wakuStatus}</p>
-      <button onClick={sendMessageOnClick} disabled={wakuStatus !== 'Ready'}>
-        Send Message
-      </button>
-      <ul>
-        {messages.map((msg) => {
-          return (
-            <li key={msg.timestamp.valueOf()}>
-              <p>
-                {msg.timestamp.toString()}: {msg.payload}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-      <WalletConnector />
+      <Headline />
+      <Stack spacing={2} direction='column'>
+        <Form />
+        <Box display='flex' justifyContent='center'>
+          <Box
+            sx={{
+              p: 2,
+              border: '1px solid grey',
+              borderRadius: '5px',
+              width: '100%',
+              maxWidth: '770px',
+            }}
+          >
+            <p>
+              Waku Network Connection State: <b>{wakuStatus}</b>
+            </p>
+            {!active && <p>Please connect your wallet.</p>}
+            <Button
+              onClick={sendMessageOnClick}
+              variant='contained'
+              disabled={wakuStatus !== 'Ready' || !active}
+            >
+              Send Message
+            </Button>
+          </Box>
+        </Box>
+      </Stack>
     </div>
   );
 };

@@ -7,20 +7,7 @@ import Stack from '@mui/material/Stack';
 
 import { useWeb3React } from '@web3-react/core';
 import { AbstractConnector } from '@web3-react/abstract-connector';
-import { WalletLinkConnector } from '@web3-react/walletlink-connector';
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { InjectedConnector } from '@web3-react/injected-connector';
-
-// TODO check env variable & allow chain ids [1, 3, 4, 5, 42]
-const CoinbaseWallet = new WalletLinkConnector({
-  url: process.env.ALCHEMY_RPC_URL!,
-  appName: 'Famed Vulnerability Submission Form',
-  supportedChainIds: [5],
-});
-
-const WalletConnect = new WalletConnectConnector({
-  supportedChainIds: [5],
-});
 
 const Injected = new InjectedConnector({
   supportedChainIds: [5],
@@ -63,22 +50,6 @@ const WalletConnector: React.FC = () => {
       >
         <Box>
           <Stack spacing={2} direction='column'>
-            <Button
-              variant='contained'
-              onClick={() => {
-                handleActivationClick(CoinbaseWallet);
-              }}
-            >
-              Coinbase Wallet
-            </Button>
-            <Button
-              variant='contained'
-              onClick={() => {
-                handleActivationClick(WalletConnect);
-              }}
-            >
-              Wallet Connect
-            </Button>
             <Button
               variant='contained'
               onClick={() => {
