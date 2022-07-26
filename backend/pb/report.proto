@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = "./";
+
+
+package pb;
+
+message Report {
+    uint64 timestamp = 1;
+    bytes payload = 2;
+    bytes ethAddress = 3;
+    bytes signature = 4;
+}
