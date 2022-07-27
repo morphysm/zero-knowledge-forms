@@ -12,7 +12,7 @@ Click on the `Edit` tab and make changes to the submission form. Currently, only
 
 ### Submit Form
 
-Fill in the answers to the question in the `Respond` tab. Login with Metamask and click `Send Form`. You will be requested to approve the signing of the to-be-submitted message by Metamask. The form will be submitted using [Waku](https://wakuconnect.dev/). The current state of the Waku network does not guarantee instant submission. The backend will decrypt, verify the signature and log the transmitted message as soon as the Waku network forwards it.
+Fill in the answers to the question in the `Respond` tab. Login with Metamask and click `Send Form`. You will be requested to approve the signing of the to-be-submitted message by Metamask. The form will be submitted using [Waku](https://wakuconnect.dev/). Messages might need several minutes to be transmitted. The backend will decrypt, verify the signature and log the transmitted message as soon as the Waku network forwards it.
 
 ## How to Use
 
@@ -45,11 +45,28 @@ Start backend:
 ETH_PRIVATE_KEY=<Ethereum private key for decryption> go run main.go
 ```
 
-### Backlog
+## In Action
 
-- Implement a submission filter based on Soulbound Tokens
+Form:
+<img width="1164" alt="Screenshot 2022-07-27 at 16 45 51" src="https://user-images.githubusercontent.com/11260050/181278064-dc4d8273-e0a4-4a90-a4ea-302e5e187b3b.png">
+
+Edit Form:
+<img width="1166" alt="Screenshot 2022-07-27 at 16 46 23" src="https://user-images.githubusercontent.com/11260050/181278085-baf52d57-e4fa-468d-9f23-62949f3210b9.png">
+
+Backend Log:
+```
+2022-07-27T14:27:25.694+0200    INFO    gowaku.node2.filter     received request        {"fullNode": false, "peer": "16Uiu2HAmVkKntsECaYfefR1V2yCR79CegLATuTPE6B9TxgxBiiiA"}
+2022-07-27T14:27:25.694+0200    INFO    gowaku.node2.filter     received a message push {"fullNode": false, "peer": "16Uiu2HAmVkKntsECaYfefR1V2yCR79CegLATuTPE6B9TxgxBiiiA", "messages": 1}
+{"questions":["What is you favourite meal?","What is your favourite programming language?"],"answers":["Pizza", "Go"]}
+
+```
+
+## Backlog
+
+- Implement token requierents to submit/edit (ERC20, ERC721, Soulbound Tokens)
 - Implement interfaces to forward submissions
 - Persist submission form changes
 - Extend submission form elements to feature parity with Google Forms
-- Replace Ethereum-based encryption with Waku's native encryption
+- Add Waku's native transport layer encryption
 - Use forward secrecy enabled encryption schema 
+- Implement tribute to talk, pay or stake tokens to submit.
