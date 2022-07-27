@@ -45,6 +45,7 @@ ETH_PRIVATE_KEY=<Ethereum private key for decryption> go run main.go
 
 ### Backlog
 
-- Implement submission filter based on soulbound tokens.
-- Persist submission form changes.
-- Implement interfaces to forward submissions.
+- Implement submission filter based on soulbound tokens
+- Implement interfaces to forward submissions
+- Persist submission form changes
+- Extend submission form elements to feature parity with google forms
