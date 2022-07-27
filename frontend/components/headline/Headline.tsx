@@ -11,7 +11,6 @@ const Headline: React.FC = () => {
         justifyContent: 'space-between',
         padding: '20px 30px',
         background: 'white',
-        marginBottom: '20px',
       }}
     >
       <h3>Famed Submission Form Prototype</h3>

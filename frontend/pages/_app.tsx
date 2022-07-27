@@ -7,6 +7,7 @@ import {
 } from '@ethersproject/providers';
 import { Web3ReactProvider } from '@web3-react/core';
 import Background from '../components/background/Background';
+import FormProvider from '../context/FormProvider';
 
 function getLibrary(provider: ExternalProvider | JsonRpcFetchFunc) {
   return new Web3Provider(provider);
@@ -16,7 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <Background />
-      <Component {...pageProps} />
+      <FormProvider>
+        <Component {...pageProps} />
+      </FormProvider>
     </Web3ReactProvider>
   );
 }
