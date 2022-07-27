@@ -49,3 +49,5 @@ ETH_PRIVATE_KEY=<Ethereum private key for decryption> go run main.go
 - Implement interfaces to forward submissions
 - Persist submission form changes
 - Extend submission form elements to feature parity with Google Forms
+- Replace Ethereum-based encryption with Waku's native encryption
+- Use forward secrecy enabled encryption schema 
