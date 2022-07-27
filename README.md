@@ -16,7 +16,7 @@ Fill in the answers to the question in the `Respond` tab. Login with Metamask an
 
 ## How to Use
 
-Tested on:
+Tested with:
 - Node.js v18.4.0
 - go 1.18
 
