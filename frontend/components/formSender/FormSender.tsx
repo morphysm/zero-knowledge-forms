@@ -91,7 +91,7 @@ const FormSender: React.FC = () => {
             !publicEncryptionKey
           }
         >
-          Send Message
+          Send Form
         </Button>
       </Box>
     </Box>
