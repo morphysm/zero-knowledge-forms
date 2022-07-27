@@ -19,9 +19,11 @@ Fill in the answers to the question in the `Respond` tab. Login with Metamask an
 Set up a .local.env variable in `/frontend` containing:
 
 ```
-NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY used in backend  https://docs.metamask.io/guide/rpc-api.html#unrestricted-methods -> eth_getEncryptionPublicKey>
+NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY used in backend https://docs.metamask.io/guide/rpc-api.html#unrestricted-methods -> eth_getEncryptionPublicKey>
 NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
 ```
+
+**Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
 
 Install frontend libraries:
 
