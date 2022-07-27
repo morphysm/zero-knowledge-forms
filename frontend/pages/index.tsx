@@ -11,9 +11,13 @@ import FormSender from '../components/formSender/FormSender';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack';
 import FormBuilder from '../components/formBuilder/FormBuilder';
+import { useWeb3React } from '@web3-react/core';
+
+const owner = process.env.NEXT_PUBLIC_OWNER;
 
 const Home: NextPage = () => {
   const [tab, setTab] = useState<string>('1');
+  const { account } = useWeb3React();
 
   const handleChange = (newValue: string) => {
     setTab(newValue);
@@ -41,7 +45,11 @@ const Home: NextPage = () => {
             aria-label='lab API tabs example'
           >
             <Tab label='Respond' value='1' />
-            <Tab label='Edit' value='2' />
+            <Tab
+              label='Edit'
+              value='2'
+              disabled={!owner || owner !== account}
+            />
           </TabList>
         </Box>
         <TabPanel value='1'>

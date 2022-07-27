@@ -24,10 +24,6 @@ const FormBuilder: React.FC = () => {
     removeQuestion(index);
   };
 
-  useEffect(() => {
-    console.log(questions);
-  }, [questions]);
-
   return (
     <Box display='flex' justifyContent='center'>
       <Box
