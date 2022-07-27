@@ -47,11 +47,15 @@ ETH_PRIVATE_KEY=<Ethereum private key for decryption> go run main.go
 
 ## In Action
 
+Edit Form:
+<img width="1166" alt="Screenshot 2022-07-27 at 16 46 23" src="https://user-images.githubusercontent.com/11260050/181278085-baf52d57-e4fa-468d-9f23-62949f3210b9.png">
+
 Form:
 <img width="1164" alt="Screenshot 2022-07-27 at 16 45 51" src="https://user-images.githubusercontent.com/11260050/181278064-dc4d8273-e0a4-4a90-a4ea-302e5e187b3b.png">
 
-Edit Form:
-<img width="1166" alt="Screenshot 2022-07-27 at 16 46 23" src="https://user-images.githubusercontent.com/11260050/181278085-baf52d57-e4fa-468d-9f23-62949f3210b9.png">
+Sign Message:
+
+<img width="412" alt="Screenshot 2022-07-27 at 16 47 14" src="https://user-images.githubusercontent.com/11260050/181278305-f32d334b-af57-4ad4-892c-5b0a53169e3d.png">
 
 Backend Log:
 ```
