@@ -50,6 +50,13 @@ NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encr
 NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
 ```
 
+Restart the fronend:
+
+```
+ctl+c
+npm run dev
+```
+
 Open a new terminal and navigate to `/backend`:
 
 Start backend:
