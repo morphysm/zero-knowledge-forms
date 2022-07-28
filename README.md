@@ -16,68 +16,74 @@ Fill in the answers to the question in the `Respond` tab. Login with Metamask an
 
 ## How to Use
 
-Tested with:
+**Tested with:**
 
 - Node.js v18.4.0
 - go 1.18
 
-Navigate to `/frontend`:
+**Navigate to `/frontend`:**
 
 ```
 cd frontend
 ```
 
-Install frontend libraries:
+**Install the frontend libraries:**
 
 ```
 npm i
 ```
 
-Start frontend:
+**Start the frontend:**
 
 ```
 npm run dev
 ```
 
-Go to `http://localhost:3000/generateEncyptionKey` and connect your metamask wallet. In your metamask wallet, chose the account you want to use to decrypt messages in the backend. Click generate on the web page. Copy the encyption key. Use the encyption key as the value for the `NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY` frontend env variable. And the corresponding private key you can extract from your metamask wallet as the value for the `ETH_PRIVATE_KEY` backend env variable.
+Go to `http://localhost:3000/generateEncyptionKey` and connect your Metamask Wallet. Open your Metamask Wallet and select the account you want to use to decrypt messages in the backend. Click generate on the web page. Copy the encyption key. Use the encyption key as the value for the `NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY` frontend env variable and the corresponding private key you can retrive from your Metamask Wallet as the value for the `ETH_PRIVATE_KEY` backend env variable.
 
 **Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
 
-Set up a .local.env variable in `/frontend` containing:
+**Set up a .local.env variable in `/frontend` containing:**
 
 ```
 NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY>
-NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
+NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form, used to edit>
 ```
 
-Restart the fronend:
+**Restart the fronend:**
 
 ```
 ctl+c
 npm run dev
 ```
 
-Open a new terminal and navigate to `/backend`:
-
-Start backend:
+**Open a new terminal and navigate to `/backend`:**
 
 ```
-ETH_PRIVATE_KEY=<Ethereum private key for decryption> go run main.go
+cd backend
+```
+
+**Start the backend:**
+
+```
+ETH_PRIVATE_KEY=<Ethereum private key for decryption retrived in previous step> go run main.go
 ```
 
 ## In Action
 
-Edit Form:
+**Edit Form:**
+
 <img width="1166" alt="Screenshot 2022-07-27 at 16 46 23" src="https://user-images.githubusercontent.com/11260050/181278085-baf52d57-e4fa-468d-9f23-62949f3210b9.png">
 
-Form:
+**Form:**
+
 <img width="1164" alt="Screenshot 2022-07-27 at 16 45 51" src="https://user-images.githubusercontent.com/11260050/181278064-dc4d8273-e0a4-4a90-a4ea-302e5e187b3b.png">
 
-Sign Message:
+**Sign Message:**
 
 <img width="412" alt="Screenshot 2022-07-27 at 16 47 14" src="https://user-images.githubusercontent.com/11260050/181278305-f32d334b-af57-4ad4-892c-5b0a53169e3d.png">
 
-Backend Log:
+**Backend Log:**
 
 ```
 2022-07-27T14:27:25.694+0200    INFO    gowaku.node2.filter     received request        {"fullNode": false, "peer": "16Uiu2HAmVkKntsECaYfefR1V2yCR79CegLATuTPE6B9TxgxBiiiA"}
