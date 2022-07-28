@@ -17,17 +17,15 @@ Fill in the answers to the question in the `Respond` tab. Login with Metamask an
 ## How to Use
 
 Tested with:
+
 - Node.js v18.4.0
 - go 1.18
 
-Set up a .local.env variable in `/frontend` containing:
+Navigate to `/frontend`:
 
 ```
-NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY>
-NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
+cd frontend
 ```
-To generate the NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY please follow the example in https://docs.metamask.io/guide/rpc-api.html#unrestricted-methods -> eth_getEncryptionPublicKey using the same ethereum key pair used in the backend.
-**Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
 
 Install frontend libraries:
 
@@ -40,6 +38,16 @@ Start frontend:
 ```
 npm run dev
 ```
+
+Set up a .local.env variable in `/frontend` containing:
+
+```
+NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY>
+NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
+```
+
+To generate the NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY please follow the example in https://docs.metamask.io/guide/rpc-api.html#unrestricted-methods -> eth_getEncryptionPublicKey using the same ethereum key pair used in the backend.
+**Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
 
 Open a new terminal and navigate to `/backend`:
 
@@ -62,6 +70,7 @@ Sign Message:
 <img width="412" alt="Screenshot 2022-07-27 at 16 47 14" src="https://user-images.githubusercontent.com/11260050/181278305-f32d334b-af57-4ad4-892c-5b0a53169e3d.png">
 
 Backend Log:
+
 ```
 2022-07-27T14:27:25.694+0200    INFO    gowaku.node2.filter     received request        {"fullNode": false, "peer": "16Uiu2HAmVkKntsECaYfefR1V2yCR79CegLATuTPE6B9TxgxBiiiA"}
 2022-07-27T14:27:25.694+0200    INFO    gowaku.node2.filter     received a message push {"fullNode": false, "peer": "16Uiu2HAmVkKntsECaYfefR1V2yCR79CegLATuTPE6B9TxgxBiiiA", "messages": 1}
@@ -76,5 +85,5 @@ Backend Log:
 - Persist submission form changes
 - Extend submission form elements to feature parity with Google Forms
 - Add Waku's native transport layer encryption
-- Use forward secrecy enabled encryption schema 
+- Use forward secrecy enabled encryption schema
 - Implement tribute to talk, pay or stake tokens to submit.
