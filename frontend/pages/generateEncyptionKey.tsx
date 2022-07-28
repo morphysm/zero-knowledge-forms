@@ -46,9 +46,8 @@ const GenerateEnryptionKey: NextPage = () => {
 
   return (
     <div className='App'>
-      <Box>
+      <Box m={2}>
         <Stack spacing={2}>
-          <WalletConnector />
           {account ? (
             <Typography variant='subtitle1' component='div'>
               Generate encyption key for account: {account}
@@ -63,9 +62,16 @@ const GenerateEnryptionKey: NextPage = () => {
               Encyption key: {enryptionKey}
             </Typography>
           )}
-          <Button variant='outlined' onClick={handleGeneratClick}>
-            Generate
-          </Button>
+          <Stack direction='row' spacing={2}>
+            <Button
+              variant='outlined'
+              onClick={handleGeneratClick}
+              fullWidth={false}
+            >
+              Generate
+            </Button>
+            <WalletConnector />
+          </Stack>
         </Stack>
       </Box>
     </div>
