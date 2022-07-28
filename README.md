@@ -39,15 +39,16 @@ Start frontend:
 npm run dev
 ```
 
+Go to `http://localhost:3000/generateEncyptionKey` and connect your metamask wallet. In your metamask wallet, chose the account you want to use to decrypt messages in the backend. Click generate on the web page. Copy the encyption key. Use the encyption key as the value for the `NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY` frontend env variable. And the corresponding private key you can extract from your metamask wallet as the value for the `ETH_PRIVATE_KEY` backend env variable.
+
+**Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
+
 Set up a .local.env variable in `/frontend` containing:
 
 ```
 NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY=<Public encryption key for metamask based encryption, derived from ETH_PRIVATE_KEY>
 NEXT_PUBLIC_OWNER=<Ethereum Address of the owner of the submission form>
 ```
-
-To generate the NEXT_PUBLIC_PUBLIC_ENCRYPTION_KEY please follow the example in https://docs.metamask.io/guide/rpc-api.html#unrestricted-methods -> eth_getEncryptionPublicKey using the same ethereum key pair used in the backend.
-**Note:** eth_getEncryptionPublicKey is [depreacted](https://medium.com/metamask/metamask-api-method-deprecation-2b0564a84686) an will be replaced as described in the [backlog](#Backlog).
 
 Open a new terminal and navigate to `/backend`:
 
