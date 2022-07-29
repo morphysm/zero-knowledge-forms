@@ -6,7 +6,7 @@ import (
 	"github.com/status-im/go-waku/waku/v2/protocol/pb"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/famed-submission-form/backend/report"
+	"github.com/famed-forms/backend/report"
 )
 
 func TestDecode(t *testing.T) {

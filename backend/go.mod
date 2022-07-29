@@ -1,4 +1,4 @@
-module github.com/famed-submission-form/backend
+module github.com/famed-forms/backend
 
 go 1.18
 

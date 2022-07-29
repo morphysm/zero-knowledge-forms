@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/famed-submission-form/backend/report"
+	"github.com/famed-forms/backend/report"
 	logging "github.com/ipfs/go-log"
 	"github.com/status-im/go-waku/waku/v2/node"
 	"github.com/status-im/go-waku/waku/v2/protocol"

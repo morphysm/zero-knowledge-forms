@@ -16,7 +16,7 @@ import (
 	"github.com/storyicon/sigverify"
 	"golang.org/x/crypto/nacl/box"
 
-	pblib "github.com/famed-submission-form/backend/pb"
+	pblib "github.com/famed-forms/backend/pb"
 )
 
 func Decode(msg *pb.WakuMessage, privateKey string) (string, error) {
