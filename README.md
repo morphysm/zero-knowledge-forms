@@ -1,4 +1,4 @@
-# famed-form
+# famed-forms
 
 This repository contains a prototype of the famed submission form.
 The submission form is intended to be used as a Web3 replacement for Google Forms.
