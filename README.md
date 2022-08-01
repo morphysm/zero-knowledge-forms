@@ -100,4 +100,5 @@ ETH_PRIVATE_KEY=<Ethereum private key for decryption retrived in previous step> 
 - Extend submission form elements to feature parity with Google Forms
 - Add Waku's native transport layer encryption
 - Use forward secrecy enabled encryption schema
-- Implement tribute to talk, pay or stake tokens to submit.
+- Implement tribute to talk, pay or stake tokens to submit
+- Implement acknowledgment of form submission
