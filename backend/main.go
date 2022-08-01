@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/famed-forms/backend/report"
+	"github.com/famed-forms/backend/server"
 	logging "github.com/ipfs/go-log"
 	"github.com/status-im/go-waku/waku/v2/node"
 	"github.com/status-im/go-waku/waku/v2/protocol"
@@ -34,6 +35,9 @@ func main() {
 	if privateKey == "" {
 		log.Fatal("ETH_PRIVATE_KEY is not set")
 	}
+
+	// Health
+	go server.Start()
 
 	hostAddr, _ := net.ResolveTCPAddr("tcp", fmt.Sprint("0.0.0.0:0"))
 
