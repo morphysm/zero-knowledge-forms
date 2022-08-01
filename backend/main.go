@@ -112,7 +112,7 @@ func readLoop(ctx context.Context, wakuNode *node.WakuNode, privateKey string) {
 		msg := value.Message()
 		payload, err := report.Decode(msg, privateKey)
 		if err != nil {
-			log.Error("Could not subscribe:  ", err)
+			log.Error("Could not decode message:  ", err)
 			return
 		}
 
